@@ -177,7 +177,7 @@ public class MeasureProcessor extends BaseProcessor {
         Object bundle = BundleUtils.bundleArtifacts(libraryName, resources, fhirContext);
         IOUtils.writeBundle(bundle, bundleDestPath, encoding, fhirContext);
 
-        BundleUtils.postBundle(encoding, fhirContext, fhirUri, (IBaseResource) bundle);
+        BundleUtils.postBundle(encoding, fhirContext, fhirUri, (IBaseResource) bundle, 25);
     }
 
     private void bundleFiles(String igPath, String bundleDestPath, String libraryName, List<String> binaryPaths, String resourceFocusSourcePath, String librarySourcePath, FhirContext fhirContext, Encoding encoding, Boolean includeTerminology, Boolean includeDependencies, Boolean includePatientScenarios, Boolean includeVersion) {
